@@ -1,9 +1,11 @@
 import { createStore } from 'redux';
 import initialState from './initialState';
+import shortid from 'shortid';
 
 const reducer = (state, action) => {
-  return state;
-};
+    if(action.type === 'ADD_COLUMN') return { ...state, columns: [...state.columns, {id: shortid(), ...action.newColumn}]}
+    return state;
+  };
 
 const store = createStore(
   reducer,
