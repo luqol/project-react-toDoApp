@@ -9,6 +9,8 @@ const reducer = (state, action) => {
       return { ...state, columns: [...state.columns, {id: shortid(), ...action.payload}]};
     case 'ADD_CARD':
       return {...state, cards: [...state.cards, {id: shortid(), ...action.payload}]};
+    case 'SEARCH_PHRASE':
+      return {...state, searchedPhrase: action.payload};
     default:
       return state;
     }
@@ -21,4 +23,4 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-export default store
+export default store;
