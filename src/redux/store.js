@@ -8,7 +8,9 @@ export const getFilteredCards = ({cards, searchedPhrase}, columnId) => cards
   .filter(card => card.columnId === columnId &&
      strContains(card.title, searchedPhrase));
 
-export const getAllCollumns = state => state.columns;
+export const getAllCollumns = ({columns}, listId) => columns.filter(column => column.listId === listId) ;
+
+export const getListByID = ({lists}, listID) => lists.find( list => list.id === listID);
 
 //action creators
 
