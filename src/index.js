@@ -6,12 +6,18 @@ import App from './App';
 import 'font-awesome/css/font-awesome.min.css';
 import './styles/normalize.scss';
 import './styles/global.scss';
+import { BrowserRouter } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Provider store={store}>
+   <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store}>
         <App />
-    </Provider>
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>
+    
 );
 
