@@ -32,7 +32,12 @@ nav{
             text-decoration: none;
             color: $color-light;
             font-weight: bold;
-            
+            &.linkActive{
+                color: $color-warning;
+              }
         }
     }
+
 }
+
+
