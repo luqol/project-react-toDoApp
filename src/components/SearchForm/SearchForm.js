@@ -3,7 +3,7 @@ import Button from '../Button/Button'
 import styles from './SearchForm.module.scss';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {  getSearchPhase, updateSearchPhrase } from '../../redux/store';
+import {  getSearchPhase, updateSearchPhrase } from '../../redux/searchPhaseRedux';
 
 const SearchForm = () => {
   const [searchedPhrase, setSearchedPhrase] = useState( useSelector(getSearchPhase) );

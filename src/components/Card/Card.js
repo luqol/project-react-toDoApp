@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import styles from './Card.module.scss';
 import { useDispatch } from 'react-redux';
-import { updateCardFavorite } from '../../redux/store';
+import { updateCardFavorite } from '../../redux/cardsRedux';
 
 
 
