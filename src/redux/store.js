@@ -32,7 +32,7 @@ export const updateCardFavorite = payload => ({type: 'TOGGLE_CARD_FAVORITE', pay
 
 //reducer function
 
-const listReducer = (statePart = [], action) => {
+const listsReducer = (statePart = [], action) => {
   switch (action.type){
     case 'ADD_LIST':
       return [...statePart, {id: shortid(), ...action.payload}];
@@ -65,7 +65,7 @@ const cardsReducer = (statePart = [], action) => {
 const searchPhaseReducer = (statePart = '', action) => {
   switch (action.type){
     case 'SEARCH_PHRASE':
-      return action.payload;
+      return  action.payload;
     default:
       return statePart;
   }
@@ -73,22 +73,14 @@ const searchPhaseReducer = (statePart = '', action) => {
 
 const reducer = (state, action) => {
 
-  switch(action.type){
-    case 'ADD_COLUMN':
-      return { ...state, columns: [...state.columns, {id: shortid(), ...action.payload}]};
-    case 'ADD_CARD':
-      return {...state, cards: [...state.cards, {id: shortid(), ...action.payload, isFavorite: false}]};
-    case 'SEARCH_PHRASE':
-      return {...state, searchedPhrase: action.payload};
-    case 'ADD_LIST':
-      return {...state, lists: [...state.lists, {id: shortid(), ...action.payload}]};
-    case 'TOGGLE_CARD_FAVORITE':
-      return { ...state, cards: state.cards.map(card => 
-        (card.id === action.payload) ? { ...card, isFavorite: !card.isFavorite } : card
-        ) };
-    default:
-      return state;
-    }
+  const newState = {
+    lists: listsReducer(state.lists, action),
+    columns: columnsReducer(state.columns, action),
+    cards: cardsReducer(state.cards, action),
+    searchedPhrase: searchPhaseReducer(state.searchedPhrase, action),
+  };
+
+  return newState;
 
 };
 
