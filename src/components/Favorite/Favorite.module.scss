@@ -3,6 +3,7 @@
  
 .favorite {
   padding: $base-size;
+  text-align: center;
 }
 
 .favoriteCards{
@@ -13,4 +14,8 @@
   border-radius: $radius;
   box-shadow: 0 math.div($base-size, 4) 0 rgba(0,0,0,0.3);
   color: $color-dark;
+}
+
+.noCards{
+  font-size: $base-size * 2;
 }
