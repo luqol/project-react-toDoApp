@@ -1,6 +1,16 @@
+@use "sass:math";
 @import '../../styles/settings.scss';
  
 .favorite {
   padding: $base-size;
 }
 
+.favoriteCards{
+  width: calc(33% - 12px);
+  background: $color-light;
+  margin: auto;
+  padding: ($base-size * 2) ($base-size * 1.5);
+  border-radius: $radius;
+  box-shadow: 0 math.div($base-size, 4) 0 rgba(0,0,0,0.3);
+  color: $color-dark;
+}

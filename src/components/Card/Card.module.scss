@@ -11,3 +11,13 @@
     justify-content: space-between;
     font-weight: bold;
 }
+
+.btnStar{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.isFavorite{
+    color: $color-warning;
+}
