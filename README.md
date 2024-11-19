@@ -11,3 +11,6 @@ Aplikacja typu todolist napisana z uzyciem Reacta. Aplikacja pozwala na dodawani
 
 **Highlights:**
 - Aplikacja napisana w React
+- Wykorzystano React Redux
+
+---
